@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Alejandro Andreu Cirilo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #b50000;
+      --secondary: #2c3e50;
+      --accent: #f5f6fa;
+      --gradient: linear-gradient(45deg, #b50000 0%, #ff4040 100%);
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      color: var(--secondary);
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient);
+    }
+    
+    h1, h2 {
+      margin: 0;
+      font-weight: 600;
+    }
+    
+    h1 {
+      color: var(--primary);
+      font-size: 2.4em;
+      margin-bottom: 5px;
+      letter-spacing: -0.5px;
+      text-align: center;
+    }
+    
+    h2 {
+      color: var(--secondary);
+      font-size: 1.5em;
+      margin: 30px 0 25px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--accent);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100px;
+      height: 3px;
+      background: var(--primary);
+    }
+    
+    .contact-info {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 20px;
+      background: var(--gradient);
+      border-radius: 8px;
+      color: white;
+      box-shadow: 0 4px 15px rgba(181,0,0,0.15);
+    }
+    
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+      opacity: 0.9;
+    }
+    
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+    
+    li {
+      margin-bottom: 15px;
+      padding-left: 30px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 1.2em;
+      top: -1px;
+    }
+    
+    .timeline {
+      margin: 25px 0;
+      padding-left: 25px;
+      border-left: 3px solid var(--primary);
+    }
+    
+    .timeline-item {
+      margin-bottom: 25px;
+      padding: 18px;
+      position: relative;
+      background: var(--accent);
+      border-radius: 8px;
+      border-left: 3px solid var(--primary);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      background: var(--gradient);
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+    
+    .strengths {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+    
+    .strengths div {
+      background: var(--gradient);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 0.95em;
+      font-weight: 500;
+      transition: transform 0.2s ease;
+      box-shadow: 0 2px 8px rgba(181,0,0,0.15);
+    }
+
+    .strengths div:hover {
+      transform: translateY(-3px);
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 30px 0;
+    }
+    
+    .social-links a {
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      border: 1px solid var(--primary);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      background: white;
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(181,0,0,0.2);
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background: var(--gradient);
+      color: white;
+      border-radius: 8px;
+      font-size: 0.9em;
+      box-shadow: 0 4px 15px rgba(181,0,0,0.15);
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      margin: 20px 0;
+    }
+
+    h3 {
+      color: var(--primary);
+      margin: 20px 0 15px;
+      font-size: 1.2em;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    h3 i {
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 25px;
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .social-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
+      
+      h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Alejandro Andreu Cirilo</h1>
+    
+    <div class="contact-info">
+      <p>
+        Madrid, España | Email: 
+        <a href="mailto:alexandre.adc@gmail.com">alexandre.adc@proton.me</a>
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Perfil</h2>
+      <div class="two-column">
+        <div>
+          <h3><i class="fas fa-tools"></i> HABILIDADES TÉCNICAS</h3>
+          <ul>
+            <li><i class="fas fa-desktop"></i>Sistemas operativos (Windows, Linux, macOS)</li>
+            <li><i class="fas fa-network-wired"></i>Hardware y redes</li>
+            <li><i class="fas fa-code"></i>Programación autodidacta</li>
+            <li><i class="fas fa-shield-alt"></i>Ciberseguridad</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3><i class="fas fa-star"></i> OTRAS COMPETENCIAS</h3>
+          <ul>
+            <li><i class="fas fa-file-excel"></i>Microsoft 365</li>
+            <li><i class="fas fa-layer-group"></i>Desarrollo Full-Stack <small>(formación reciente)</small></li>
+            <li><i class="fas fa-chart-line"></i>Inversiones <small>(conocimientos prácticos)</small> </li>
+            <li><i class="fas fa-photo-video"></i>Edición multimedia <small>(Photoshop, Premiere Pro)</small> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Formación</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>Administración de Redes y Sistemas | Formación Profesional</strong><br>
+          CEU FP Madrid (09/2023 - 06/2025)
+        </div>
+        <div class="timeline-item">
+          <strong>Programación Informática| Piscine Discovery</strong><br>
+          Piscine Discovery Web 42 Web Fundación Telefónica (12/2024)
+        </div>
+        <div class="timeline-item">
+          <strong>Programación Informática | 42-Madrid.Piscine-C-Shell</strong><br>
+          42 Madrid Web Fundación Telefónica (02/2023 - 03/2023)
+        </div>
+        <div class="timeline-item">
+          <strong>Matemáticas e Informática</strong><br>
+          Gredos San Diego (ESO) (09/2018 - 06/2022)
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Puntos Fuertes</h2>
+      <div class="strengths">
+        <div>Disciplinado</div>
+        <div>Adaptabilidad al cambio</div>
+        <div>Resiliencia digital</div>
+        <div>Aprendizaje constante</div>
+        <div>P2P knowledge sharing</div>
+        <div>Mentalidad debugger</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Redes Sociales</h2>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/alex-andreu/" target="_blank">
+          <i class="fab fa-linkedin"></i>LinkedIn
+        </a>
+        <a href="https://github.com/4lex-42" target="_blank">
+          <i class="fab fa-github"></i>GitHub
+        </a>
+        <a href="mailto:alexandre.adc@gmail.com">
+          <i class="fas fa-envelope"></i>Gmail
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 Alejandro Andreu Cirilo | CV Actualizado
+    </footer>
+  </div>
+</body>
+</html>
