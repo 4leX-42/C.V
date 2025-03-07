@@ -165,10 +165,19 @@
       font-weight: 500;
       transition: transform 0.2s ease;
       box-shadow: 0 2px 8px rgba(181,0,0,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .strengths div:hover {
       transform: translateY(-3px);
+    }
+
+    /* Ajuste para "Resiliencia Digital" y "Autodidacta" */
+    .strengths div:nth-child(3),
+    .strengths div:nth-child(5) {
+      padding-top: 10px; 
     }
 
     .social-links {
