@@ -174,12 +174,6 @@
       transform: translateY(-3px);
     }
 
-    /* Ajuste para "Resiliencia Digital" y "Autodidacta" */
-    .strengths div:nth-child(3),
-    .strengths div:nth-child(5) {
-      padding-top: 10px; 
-    }
-
     .social-links {
       display: flex;
       justify-content: center;
@@ -267,88 +261,124 @@
 </head>
 <body>
   <div class="container">
-    <h1>Alejandro Andreu Cirilo</h1>
+    <header>
+      <h1>Alejandro Andreu Cirilo</h1>
+    </header>
 
     <div class="contact-info">
       <p>
         Madrid, España | Email:
-        <a href="mailto:alexandre.adc@proton.me">alexandre.adc@proton.me</a>
+        <a href="mailto:alexandreu.adc@proton.me">alexandreu.adc@proton.me</a>
       </p>
     </div>
 
-    <div class="section">
-      <h2>Perfil</h2>
-      <div class="two-column">
-        <div>
-          <h3><i class="fas fa-tools"></i> Habilidades Técnicas</h3>
-          <ul>
-            <li><i class="fas fa-desktop"></i> OS (Windows, Linux, macOS)</li>
-            <li><i class="fas fa-network-wired"></i> Redes & Hardware</li>
-            <li><i class="fas fa-code"></i> Fundamentos de Programación</li>
-            <li><i class="fas fa-shield-alt"></i> Ciberseguridad</li>
-          </ul>
-        </div>
+    <main>
+      <section class="section">
+        <h2>Perfil</h2>
+        <div class="two-column">
+          <div>
+            <h3><i class="fas fa-tools" aria-hidden="true"></i> Habilidades Técnicas</h3>
+            <ul>
+              <li><i class="fas fa-desktop" aria-hidden="true"></i> OS (Windows, Linux, macOS)</li>
+              <li><i class="fas fa-network-wired" aria-hidden="true"></i> Redes & Hardware</li>
+              <li><i class="fas fa-code" aria-hidden="true"></i> Fundamentos de Programación</li>
+              <li><i class="fas fa-shield-alt" aria-hidden="true"></i> Ciberseguridad</li>
+            </ul>
+          </div>
 
-        <div>
-          <h3><i class="fas fa-star"></i> Otras Competencias</h3>
-          <ul>
-            <li><i class="fas fa-file-excel"></i> Microsoft 365</li>
-            <li><i class="fas fa-layer-group"></i> Desarrollo Full-Stack <small>(formación reciente)</small></li>
-            <li><i class="fas fa-chart-line"></i> Inversiones <small>(conocimientos prácticos)</small></li>
-            <li><i class="fas fa-photo-video"></i> Edición Multimedia <small>(Photoshop, Premiere Pro)</small></li>
-          </ul>
+          <div>
+            <h3><i class="fas fa-star" aria-hidden="true"></i> Otras Competencias</h3>
+            <ul>
+              <li><i class="fas fa-file-excel" aria-hidden="true"></i> Microsoft 365</li>
+              <li><i class="fas fa-layer-group" aria-hidden="true"></i> Desarrollo Full-Stack <small>(formación reciente)</small></li>
+              <li><i class="fas fa-chart-line" aria-hidden="true"></i> Inversiones <small>(conocimientos prácticos)</small></li>
+              <li><i class="fas fa-photo-video" aria-hidden="true"></i> Edición Multimedia <small>(Photoshop, Premiere Pro)</small></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="section">
-      <h2>Formación</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <strong>Administración de Redes y Sistemas | Formación Profesional</strong><br>
-          CEU FP Madrid (09/2023 - 06/2025)
+      <section class="section">
+        <h2>Formación</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Técnico en Sistemas Microinformáticos y Redes</strong><br>
+            CEU FP Madrid (09/2023 - 06/2025)<br>
+            <em>Habilidades clave desarrolladas:</em>
+            <ul style="margin-top: 10px;">
+              <li><i class="fas fa-server" aria-hidden="true"></i> Redes LAN/WAN y seguridad</li>
+              <li><i class="fas fa-shield-alt" aria-hidden="true"></i> Hardening de sistemas y políticas de seguridad</li>
+              <li><i class="fas fa-cloud" aria-hidden="true"></i> Administración de servicios cloud híbridos</li>
+              <li><i class="fas fa-tools" aria-hidden="true"></i> Reparación de hardware</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <strong>Matemáticas e Informática</strong><br>
+            Gredos San Diego (ESO) (09/2018 - 06/2022)
+          </div>
         </div>
-        <div class="timeline-item">
-          <strong>Programación Informática | Piscine Discovery</strong><br>
-          Piscine Discovery Web 42 Web Fundación Telefónica (12/2024)
-        </div>
-        <div class="timeline-item">
-          <strong>Programación Informática | 42-Madrid.Piscine-C-Shell</strong><br>
-          42 Madrid Web Fundación Telefónica (02/2023 - 03/2023)
-        </div>
-        <div class="timeline-item">
-          <strong>Matemáticas e Informática</strong><br>
-          Gredos San Diego (ESO) (09/2018 - 06/2022)
-        </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="section">
-      <h2>Puntos Fuertes</h2>
-      <div class="strengths">
-        <div>Disciplina y Autocontrol</div>
-        <div>Adaptabilidad al Cambio</div>
-        <div>Resiliencia Digital</div>
-        <div>P2P Knowledge Sharing</div>
-        <div>Autodidacta</div>
-        <div>Pensamiento Sistémico</div>
-      </div>
-    </div>
+      <section class="section">
+        <h2>Proyectos</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Portafolio Web - Marca Personal</strong><br>
+            <a href="https://4lex-42.github.io/my-portfolio/" target="_blank" rel="noopener noreferrer">https://4lex-42.github.io/my-portfolio/</a><br>
+            <em>Desarrollo frontend React, HTML5 y CSS3</em>
+          </div>
+          <div class="timeline-item">
+            <strong>Diseño e Implementación de Red Segura</strong><br>
+            Proyecto académico CEU FP (11/2024)<br>
+            <em>Configuración de red LAN corporativa con:</em>
+            <ul style="margin-top: 10px;">
+              <li><i class="fas fa-network-wired" aria-hidden="true"></i> VLANs y políticas de segmentación</li>
+              <li><i class="fas fa-filter"></i> Firewall empresarial (reglas de filtrado)</li>
+              <li><i class="fas fa-map-signs"></i> Servidor DNS personalizado</li>
+              <li><i class="fa-solid fa-wifi"></i> DHCP con reservas de direcciones</li>
+              <li><i class="fas fa-lock" aria-hidden="true"></i> Hardening de dispositivos de red</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <strong>Programación Informática | Piscine Discovery</strong><br>
+            Piscine Discovery Web 42 Web Fundación Telefónica (12/2024 - 17/2024)<br>
+            <em>Desarrollo de habilidades en programación web con tecnologías front-end y back-end</em>
+          </div>
+          <div class="timeline-item">
+            <strong>42-Madrid.Piscine-C-Shell</strong><br>
+            Fundación Telefónica (02/2023 - 03/2023)<br>
+            <em>Programación en C y Shell scripting para sistemas UNIX</em>
+          </div>
+        </div>
+      </section>
 
-    <div class="section">
-      <h2>Redes Sociales</h2>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/alex-andreu/" target="_blank">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://github.com/4lex-42" target="_blank">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="mailto:alexandre.adc@proton.me">
-          <i class="fas fa-envelope"></i> Email
-        </a>
-      </div>
-    </div>
+      <section class="section">
+        <h2>Puntos Fuertes</h2>
+        <div class="strengths">
+          <div>Disciplina y Autocontrol</div>
+          <div>Adaptabilidad al Cambio</div>
+          <div>Resiliencia Digital</div>
+          <div>P2P Knowledge Sharing</div>
+          <div>Autodidacta</div>
+          <div>Pensamiento Sistémico</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Contacto</h2>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/alex-andreu/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+          <a href="https://github.com/4lex-42" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+          </a>
+          <a href="mailto:alexandreu.adc@proton.me">
+            <i class="fas fa-envelope" aria-hidden="true"></i> Email
+          </a>
+        </div>
+      </section>
+    </main>
 
     <footer>
       &copy; 2025 Alejandro Andreu Cirilo | CV Actualizado
