@@ -55,6 +55,14 @@
       text-align: center;
     }
 
+    .professional-summary {
+      text-align: center;
+      color: #666;
+      margin: 0 auto 30px;
+      max-width: 600px;
+      font-size: 1.1em;
+    }
+
     h2 {
       color: var(--secondary);
       font-size: 1.5em;
@@ -132,6 +140,11 @@
       border-radius: 8px;
       border-left: 3px solid var(--primary);
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateX(10px);
     }
 
     .timeline-item::before {
@@ -156,22 +169,42 @@
     }
 
     .strengths div {
-      background: var(--gradient);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      text-align: center;
-      font-size: 0.95em;
-      font-weight: 500;
-      transition: transform 0.2s ease;
-      box-shadow: 0 2px 8px rgba(181,0,0,0.15);
-      display: flex;
+      display: flex !important;
       align-items: center;
       justify-content: center;
+      min-height: 50px;
+      text-align: center;
+      padding: 8px 12px !important;
+      background: var(--gradient);
+      color: white;
+      border-radius: 25px;
+      font-size: 0.90em;
+      font-weight: 500;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(181,0,0,0.15);
+      cursor: default;
+      position: relative;
+      overflow: hidden;
     }
 
     .strengths div:hover {
-      transform: translateY(-3px);
+      transform: scale(1.05) !important;
+    }
+
+    .strengths div::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent 20%, rgba(255,255,255,0.2) 50%, transparent 80%);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) rotate(45deg); }
     }
 
     .social-links {
@@ -201,17 +234,6 @@
       box-shadow: 0 5px 15px rgba(181,0,0,0.2);
     }
 
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 20px;
-      background: var(--gradient);
-      color: white;
-      border-radius: 8px;
-      font-size: 0.9em;
-      box-shadow: 0 4px 15px rgba(181,0,0,0.15);
-    }
-
     .two-column {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -219,18 +241,15 @@
       margin: 20px 0;
     }
 
-    h3 {
+    .certification-badge {
+      display: inline-block;
+      background: #ffe6e6;
       color: var(--primary);
-      margin: 20px 0 15px;
-      font-size: 1.2em;
-      position: relative;
-      padding-left: 25px;
-    }
-
-    h3 i {
-      position: absolute;
-      left: 0;
-      top: 2px;
+      padding: 6px 15px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 0.9em;
+      border: 1px solid var(--primary);
     }
 
     @media (max-width: 768px) {
@@ -242,6 +261,10 @@
         grid-template-columns: 1fr;
       }
 
+      h1 {
+        font-size: 2em;
+      }
+
       .contact-info a {
         display: block;
         margin: 10px 0;
@@ -250,11 +273,6 @@
       .social-links {
         flex-direction: column;
         gap: 15px;
-        align-items: center;
-      }
-
-      h1 {
-        font-size: 2em;
       }
     }
   </style>
@@ -267,51 +285,52 @@
 
     <div class="contact-info">
       <p>
-        Madrid, España | Email:
-        <a href="mailto:alexandreu.adc@proton.me">alexandreu.adc@proton.me</a>
+        📍 Madrid/Segovia, España | 📧 <a href="mailto:alexandreu.adc@proton.me">alexandreu.adc@proton.me</a><br>
+        🔗 <a href="https://linkedin.com/in/alex-andreu" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/4lex-42" target="_blank">GitHub</a>
       </p>
     </div>
 
     <main>
-      <section class="section">
-        <h2>Perfil</h2>
+      <section>
+        <h2>🛠 Competencias Técnicas</h2>
         <div class="two-column">
           <div>
-            <h3><i class="fas fa-tools" aria-hidden="true"></i> Habilidades Técnicas</h3>
+            <h3><i class="fas fa-tools"></i> Sistemas y Redes</h3>
             <ul>
-              <li><i class="fas fa-desktop" aria-hidden="true"></i> OS (Windows Server, Linux, macOS)</li>
-              <li><i class="fas fa-network-wired" aria-hidden="true"></i> Redes & Hardware</li>
-              <li><i class="fas fa-code" aria-hidden="true"></i> Fundamentos de Programación</li>
-              <li><i class="fas fa-shield-alt" aria-hidden="true"></i> Ciberseguridad</li>
+              <li>Administración Windows Server/Linux</li>
+              <li>Configuración de redes LAN/WAN</li>
+              <li>Virtualización (VMware, Hyper-V)</li>
+              <li>Seguridad perimetral (Firewalls)</li>
             </ul>
           </div>
 
           <div>
-            <h3><i class="fas fa-star" aria-hidden="true"></i> Otras Competencias</h3>
+            <h3><i class="fas fa-code"></i> Desarrollo</h3>
             <ul>
-              <li><i class="fas fa-file-excel" aria-hidden="true"></i> Microsoft 365</li>
-              <li><i class="fas fa-layer-group" aria-hidden="true"></i> Desarrollo Full-Stack <small>(formación reciente)</small></li>
-              <li><i class="fas fa-chart-line" aria-hidden="true"></i> Inversiones <small>(conocimientos prácticos)</small></li>
-              <li><i class="fas fa-photo-video" aria-hidden="true"></i> Edición Multimedia <small>(Photoshop, Premiere Pro)</small></li>
+              <li>Programación en C/C++</li>
+              <li>Shell Scripting</li>
+              <li>Desarrollo Web (HTML/CSS/JS)</li>
+              <li>Bases de datos SQL</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <h2>Formación</h2>
+      <section>
+        <h2>🎓 Formación</h2>
         <div class="timeline">
           <div class="timeline-item">
-            <strong>Técnico en Sistemas Microinformáticos y Redes</strong><br>
-            CEU FP Madrid (09/2023 - 06/2025)<br>
-            <em>Habilidades clave desarrolladas:</em>
-            <ul style="margin-top: 10px;">
-              <li><i class="fas fa-server" aria-hidden="true"></i> Redes LAN/WAN y seguridad</li>
-              <li><i class="fas fa-shield-alt" aria-hidden="true"></i> Hardening de sistemas y políticas de seguridad</li>
-              <li><i class="fas fa-cloud" aria-hidden="true"></i> Administración de servicios cloud híbridos</li>
-              <li><i class="fas fa-tools" aria-hidden="true"></i> Reparación de hardware</li>
+            <strong>Técnico Superior en Sistemas Microinformáticos y Redes</strong><br>
+            CEU FP Madrid (2023-2025)<br>
+            <em>Módulos destacados:</em>
+            <ul>
+              <li>Implantación de Sistemas Operativos</li>
+              <li>Gestión de Bases de Datos</li>
+              <li>Seguridad y Alta Disponibilidad</li>
             </ul>
           </div>
+
           <div class="timeline-item">
             <strong>Matemáticas e Informática</strong><br>
             Gredos San Diego (ESO) (09/2018 - 06/2022)
@@ -319,69 +338,101 @@
         </div>
       </section>
 
-      <section class="section">
-        <h2>Proyectos</h2>
+      <section>
+        <h2>💻 Experiencia Técnica</h2>
         <div class="timeline">
           <div class="timeline-item">
-            <strong>Portafolio Web - Marca Personal</strong><br>
-            <a href="https://4lex-42.github.io/my-portfolio/" target="_blank" rel="noopener noreferrer">https://4lex-42.github.io/my-portfolio/</a><br>
-            <em>Desarrollo frontend con React, HTML5 y CSS3</em>
-          </div>
-          <div class="timeline-item">
-            <strong>Diseño e Implementación de Red Segura</strong><br>
-            Proyecto académico CEU FP (11/2024)<br>
-            <em>Configuración de red LAN corporativa con:</em>
-            <ul style="margin-top: 10px;">
-              <li><i class="fas fa-network-wired" aria-hidden="true"></i> VLANs y políticas de segmentación</li>
-              <li><i class="fas fa-filter"></i> Firewall empresarial (reglas de filtrado)</li>
-              <li><i class="fas fa-map-signs"></i> Servidor DNS personalizado</li>
-              <li><i class="fa-solid fa-wifi"></i> DHCP con reservas de direcciones</li>
-              <li><i class="fas fa-lock" aria-hidden="true"></i> Hardening de dispositivos de red</li>
-            </ul>
-          </div>
-          <div class="timeline-item">
-            <strong>Programación Informática | Piscine Discovery</strong><br>
+            <strong>Programación Web | Piscine Discovery</strong><br>
             Piscine Discovery Web 42 Web Fundación Telefónica (5 días)<br>
             <em>Desarrollo de habilidades en programación web con tecnologías front-end y back-end</em>
           </div>
+
           <div class="timeline-item">
             <strong>42-Madrid.Piscine-C-Shell</strong><br>
             Fundación Telefónica (02/2023 - 03/2023)<br>
             <em>Programación en C y Shell scripting para sistemas UNIX</em>
           </div>
+
+          <div class="timeline-item">
+            <strong>Proyecto de Red Segura</strong><br>
+            CEU FP (2024)<br>
+            <em>Implementación:</em>
+            <ul>
+              <li>Configuración de VLANs</li>
+              <li>Firewall empresarial</li>
+              <li>Servidor DNS personalizado</li>
+              <li>Hardening de dispositivos</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section class="section">
-        <h2>Puntos Fuertes</h2>
+      <section>
+        <h2>🚀 Proyectos Destacados</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Implementación de Active Directory</strong><br>
+            Laboratorio CEU FP (2024)<br>
+            <em>Configuración de dominio empresarial:</em>
+            <ul>
+              <li><i class="fas fa-users-cog"></i> Creación de usuarios y grupos</li>
+              <li><i class="fas fa-shield-alt"></i> Políticas de seguridad GPO</li>
+              <li><i class="fas fa-sync-alt"></i> Replicación entre controladores de dominio</li>
+              <li><i class="fas fa-lock"></i> Autenticación LDAP/Kerberos</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <strong>Migración a Windows Server 2022</strong><br>
+            Proyecto Académico (2024)<br>
+            <em>Actualización de infraestructura:</em>
+            <ul>
+              <li><i class="fas fa-server"></i> Virtualización con Hyper-V</li>
+              <li><i class="fas fa-database"></i> Configuración de DFS</li>
+              <li><i class="fas fa-network-wired"></i> DHCP y DNS empresarial</li>
+              <li><i class="fas fa-cloud-upload-alt"></i> Integración con Azure AD</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <strong>Portafolio Profesional</strong><br>
+            <a href="https://4lex-42.github.io/my-portfolio/" target="_blank">Ver proyecto</a><br>
+            <em>Tecnologías utilizadas:</em>
+            <ul>
+              <li>React.js</li>
+              <li>CSS3 Animaciones</li>
+              <li>GitHub Pages</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>🌟 Habilidades Clave</h2>
         <div class="strengths">
-          <div>Disciplina y Autocontrol</div>
-          <div>Adaptabilidad al Cambio</div>
-          <div>Resiliencia Digital</div>
-          <div>P2P Knowledge Sharing</div>
-          <div>Autodidacta</div>
-          <div>Pensamiento Sistémico</div>
+          <div>Resolución de Problemas</div>
+          <div>Administración de Sistemas</div>
+          <div>Gestión de Redes</div>
+          <div>Seguridad Informática</div>
+          <div>Soporte Técnico</div>
+          <div>Virtualización</div>
+          <div>Scripting y Automatización</div>
+          <div>Comunicación Técnica</div>
         </div>
       </section>
 
-      <section class="section">
-        <h2>Contacto</h2>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/alex-andreu/" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
-          </a>
-          <a href="https://github.com/4lex-42" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github" aria-hidden="true"></i> GitHub
-          </a>
-          <a href="mailto:alexandreu.adc@proton.me">
-            <i class="fas fa-envelope" aria-hidden="true"></i> Email
-          </a>
+      <section>
+        <h2>📜 Certificaciones</h2>
+        <div>
+          <span class="certification-badge">Cisco CCNA 1</span>
+          <span class="certification-badge">Microsoft Azure Fundamentals</span>
+          <span class="certification-badge">IT Essentials</span>
         </div>
       </section>
     </main>
 
     <footer>
-      &copy; 2025 Alejandro Andreu Cirilo | CV Actualizado
+      &copy; 2024 Alejandro Andreu Cirilo | CV Actualizado
     </footer>
   </div>
 </body>
