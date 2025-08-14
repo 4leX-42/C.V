@@ -8,30 +8,33 @@
   <style>
     :root {
       --primary: #b50000;
+      --primary-light: #ff4040;
       --secondary: #2c3e50;
-      --accent: #f5f6fa;
+      --light-bg: #f8f9fa;
+      --accent: #e9ecef;
       --gradient: linear-gradient(45deg, #b50000 0%, #ff4040 100%);
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
-
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      margin: 0;
-      padding: 40px 20px;
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background-color: var(--light-bg);
       color: var(--secondary);
+      line-height: 1.6;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
     }
-
     .container {
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 900px;
+      width: 100%;
       background: white;
-      padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      position: relative;
+      box-shadow: var(--shadow);
       overflow: hidden;
+      position: relative;
     }
-
     .container::before {
       content: '';
       position: absolute;
@@ -41,399 +44,174 @@
       height: 4px;
       background: var(--gradient);
     }
-
-    h1, h2 {
-      margin: 0;
-      font-weight: 600;
-    }
-
-    h1 {
-      color: var(--primary);
-      font-size: 2.4em;
-      margin-bottom: 5px;
-      letter-spacing: -0.5px;
-      text-align: center;
-    }
-
-    .professional-summary {
-      text-align: center;
-      color: #666;
-      margin: 0 auto 30px;
-      max-width: 600px;
-      font-size: 1.1em;
-    }
-
-    h2 {
-      color: var(--secondary);
-      font-size: 1.5em;
-      margin: 30px 0 25px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid var(--accent);
-      position: relative;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      left: 0;
-      width: 100px;
-      height: 3px;
-      background: var(--primary);
-    }
-
-    .contact-info {
-      text-align: center;
-      margin-bottom: 40px;
-      padding: 20px;
-      background: var(--gradient);
-      border-radius: 8px;
-      color: white;
-      box-shadow: 0 4px 15px rgba(181,0,0,0.15);
-    }
-
-    .contact-info a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      transition: all 0.3s ease;
-      font-weight: 600;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
-      opacity: 0.9;
-    }
-
-    ul {
-      padding-left: 0;
-      list-style: none;
-    }
-
-    li {
-      margin-bottom: 15px;
-      padding-left: 30px;
-      position: relative;
-      line-height: 1.6;
-    }
-
-    li::before {
-      content: "▹";
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-      font-size: 1.2em;
-      top: -1px;
-    }
-
-    .timeline {
-      margin: 25px 0;
-      padding-left: 25px;
-      border-left: 3px solid var(--primary);
-    }
-
-    .timeline-item {
-      margin-bottom: 25px;
-      padding: 18px;
-      position: relative;
-      background: var(--accent);
-      border-radius: 8px;
-      border-left: 3px solid var(--primary);
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .timeline-item:hover {
-      transform: translateX(10px);
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -30px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 14px;
-      height: 14px;
-      background: var(--gradient);
-      border-radius: 50%;
-      border: 3px solid white;
-      box-shadow: 0 0 0 2px var(--primary);
-    }
-
-    .strengths {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 15px;
-      margin: 25px 0;
-    }
-
-    .strengths div {
-      display: flex !important;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      text-align: center;
-      padding: 8px 12px !important;
-      background: var(--gradient);
-      color: white;
-      border-radius: 25px;
-      font-size: 0.90em;
-      font-weight: 500;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 2px 8px rgba(181,0,0,0.15);
-      cursor: default;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .strengths div:hover {
-      transform: scale(1.05) !important;
-    }
-
-    .strengths div::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent 20%, rgba(255,255,255,0.2) 50%, transparent 80%);
-      animation: shine 3s infinite;
-    }
-
-    @keyframes shine {
-      0% { transform: translateX(-100%) rotate(45deg); }
-      100% { transform: translateX(100%) rotate(45deg); }
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin: 30px 0;
-    }
-
-    .social-links a {
-      color: var(--primary);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 25px;
-      border-radius: 30px;
-      border: 1px solid var(--primary);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    header {
+      padding: 30px 40px 20px;
       background: white;
+      text-align: center;
+      border-bottom: 1px solid var(--accent);
     }
-
-    .social-links a:hover {
-      background: var(--primary);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(181,0,0,0.2);
-    }
-
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      margin: 20px 0;
-    }
-
-    .certification-badge {
-      display: inline-block;
-      background: #ffe6e6;
-      color: var(--primary);
-      padding: 6px 15px;
-      border-radius: 20px;
-      margin: 5px;
-      font-size: 0.9em;
-      border: 1px solid var(--primary);
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        padding: 25px;
-      }
-
-      .two-column {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 2em;
-      }
-
-      .contact-info a {
-        display: block;
-        margin: 10px 0;
-      }
-
-      .social-links {
-        flex-direction: column;
-        gap: 15px;
-      }
-    }
+    h1 { color: var(--primary); font-size: 2.4rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
+    .professional-title { color: var(--secondary); font-size: 1.2rem; font-weight: 600; margin-bottom: 20px; }
+    .contact-info { display:flex; flex-wrap:wrap; justify-content:center; gap:15px 25px; margin-top:15px; }
+    .contact-item { display:flex; align-items:center; gap:8px; font-size:0.95rem; }
+    .contact-item a { color: var(--secondary); text-decoration:none; font-weight:500; transition: all 0.3s ease; }
+    .contact-item a:hover { color: var(--primary); text-decoration: underline; }
+    .main-content { display:grid; grid-template-columns:1fr 1.5fr; gap:20px; padding:30px 40px; }
+    .sidebar { background: var(--accent); border-radius:10px; padding:25px; height: fit-content; }
+    .content-section { margin-bottom:35px; }
+    .content-section:last-child { margin-bottom:0; }
+    h2 { color: var(--primary); font-size:1.4rem; margin-bottom:18px; padding-bottom:10px; border-bottom:2px solid var(--primary); display:flex; align-items:center; gap:10px; }
+    h2 i { font-size:1.2rem; }
+    h3 { font-size:1.1rem; color: var(--secondary); margin-bottom:12px; }
+    ul { padding-left:20px; }
+    li { margin-bottom:8px; position:relative; padding-left:8px; }
+    li::before { content:"•"; color: var(--primary); position:absolute; left:-12px; top:0; font-weight:bold; }
+    .skills-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); gap:10px; margin-top:15px; }
+    .skill-tag { display:flex; justify-content:center; align-items:center; background:white; border:1px solid var(--primary-light); color: var(--primary); padding:7px 12px; border-radius:20px; font-size:0.85rem; font-weight:500; text-align:center; transition: all 0.2s ease; }
+    .skill-tag:hover { background: var(--primary); color:white; transform:translateY(-2px); box-shadow:0 5px 15px rgba(181,0,0,0.2);}
+    .timeline-item { margin-bottom:25px; position:relative; padding-left:25px; border-left:2px solid var(--primary); }
+    .timeline-item:last-child { margin-bottom:0; }
+    .timeline-item::before { content:''; position:absolute; left:-7px; top:8px; width:12px; height:12px; background: var(--primary); border-radius:50%; }
+    .timeline-date { font-size:0.9rem; color:#666; margin-bottom:5px; }
+    .timeline-title { font-weight:700; font-size:1.1rem; margin-bottom:8px; }
+    .timeline-subtitle { font-size:0.95rem; color:#555; margin-bottom:10px; font-style:italic; }
+    .achievement { background: rgba(181,0,0,0.05); border-left:3px solid var(--primary); padding:12px 15px; margin:15px 0; border-radius:0 8px 8px 0; }
+    .achievement-title { display:flex; align-items:center; gap:8px; font-weight:600; margin-bottom:5px; color: var(--primary); }
+    .cert-badge { display:inline-block; background:rgba(181,0,0,0.1); color:var(--primary); padding:6px 15px; border-radius:20px; margin:5px 5px 5px 0; font-size:0.85rem; font-weight:500; border:1px solid var(--primary-light); }
+    .profile-summary { background: linear-gradient(135deg, rgba(181,0,0,0.03) 0%, rgba(255,64,64,0.03) 100%); padding:20px 25px; border-radius:10px; margin:0 40px 25px; font-size:0.95rem; line-height:1.7; border-left:3px solid var(--primary); }
+    .tool-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+    .tool-item { background:white; border:1px solid #ddd; padding:4px 10px; border-radius:15px; font-size:0.8rem; }
+    .highlight { font-weight:600; }
+    @media (max-width:768px) { .main-content { grid-template-columns:1fr; padding:25px; } header { padding:25px 20px 15px; } .profile-summary { margin:0 25px 20px; } .contact-info { gap:10px 15px; } }
+    @media (max-width:480px) { .contact-info { flex-direction:column; align-items:center; gap:10px; } .contact-item { justify-content:center; } }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <h1>Alejandro Andreu Cirilo</h1>
+      <div class="professional-title">IT Infrastructures & CloudOps</div>
+      <div class="contact-info">
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Madrid/Segovia, España</span></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:alexandreu.adc@proton.me">alexandreu.adc@proton.me</a></div>
+        <div class="contact-item"><i class="fab fa-linkedin"></i><a href="https://linkedin.com/in/alex-andreu" target="_blank">LinkedIn</a></div>
+        <div class="contact-item"><i class="fab fa-github"></i><a href="https://github.com/4lex-42" target="_blank">GitHub</a></div>
+      </div>
     </header>
 
-    <div class="contact-info">
-      <p>
-        📍 Madrid/Segovia, España | 📧 <a href="mailto:alexandreu.adc@proton.me">alexandreu.adc@proton.me</a><br>
-        🔗 <a href="https://linkedin.com/in/alex-andreu" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/4lex-42" target="_blank">GitHub</a>
-      </p>
+    <div class="profile-summary">
+      <strong>Perfil Profesional:</strong> Técnico en Sistemas Microinformáticos y Redes con conocimientos en administración de sistemas, gestión de redes y soporte IT. Me enfoco en investigar, aprender y proponer mejoras que agilicen procesos y faciliten el trabajo diario.
     </div>
 
-    <main>
-      <section>
-        <h2>🛠 Competencias Técnicas</h2>
-        <div class="two-column">
+    <div class="main-content">
+      <div class="sidebar">
+        <div class="content-section">
+          <h2><i class="fas fa-tools"></i> Competencias</h2>
+          <h3>Sistemas y Redes</h3>
+          <div class="skills-grid">
+            <div class="skill-tag">Windows Server</div>
+            <div class="skill-tag">Linux</div>
+            <div class="skill-tag">Redes LAN/WAN</div>
+            <div class="skill-tag">VMware/Hyper-V</div>
+            <div class="skill-tag">Firewalls</div>
+            <div class="skill-tag">Active Directory</div>
+            <div class="skill-tag">Azure</div>
+            <div class="skill-tag">Microsoft 365</div>
+          </div>
+          <h3>Desarrollo</h3>
+          <div class="skills-grid">
+            <div class="skill-tag">C/C++</div>
+            <div class="skill-tag">Bash</div>
+            <div class="skill-tag">PowerShell</div>
+            <div class="skill-tag">Shell Scripting</div>
+            <div class="skill-tag">HTML/CSS/JS</div>
+            <div class="skill-tag">SQL</div>
+          </div>
+          <h3>Habilidades Clave</h3>
+          <div class="skills-grid">
+            <div class="skill-tag" style="justify-content:center; align-items:center;">Seguridad IT</div>
+            <div class="skill-tag">Migración Cloud</div>
+            <div class="skill-tag">Automatización</div>
+            <div class="skill-tag" style="justify-content:center; align-items:center;">Documentación</div>
+            <div class="skill-tag">Resolución Problemas</div>
+            <div class="skill-tag">Gestión de Infraestructura</div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h2><i class="fas fa-graduation-cap"></i> Formación</h2>
+          <div class="timeline-item">
+            <div class="timeline-date">2025-2027</div>
+            <div class="timeline-title">ASIR · FP CEU Madrid</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2023-2025</div>
+            <div class="timeline-title">SMR · FP CEU Madrid</div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h2><i class="fas fa-award"></i> Certificaciones</h2>
           <div>
-            <h3><i class="fas fa-tools"></i> Sistemas y Redes</h3>
+            <span class="cert-badge">Cisco CCNA 1</span>
+            <span class="cert-badge">IT Essentials</span>
+            <span class="cert-badge">Microsoft Azure Fundamentals</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-section">
+        <div class="content-section">
+          <h2><i class="fas fa-briefcase"></i> Experiencia</h2>
+          <div class="timeline-item">
+            <div class="timeline-date">jun. 2025 - actualidad</div>
+            <div class="timeline-title">IT Support</div>
+            <div class="timeline-subtitle">Andersen in Spain · Contrato de prácticas · Presencial</div>
             <ul>
-              <li>Administración Windows Server/Linux</li>
-              <li>Configuración de redes LAN/WAN</li>
-              <li>Virtualización (VMware, Hyper-V)</li>
-              <li>Seguridad perimetral (Firewalls)</li>
+              <li>Soporte técnico a usuarios y resolución de incidencias</li>
+              <li>Mantenimiento y configuración de equipos informáticos</li>
+              <li>Gestión de redes y configuración básica de servidores</li>
             </ul>
+            <h3 style="margin-top:10px;">Herramientas utilizadas:</h3>
+            <div class="tool-list">
+              <span class="tool-item">Windows Server</span>
+              <span class="tool-item">Azure</span>
+              <span class="tool-item">Microsoft 365 Admin Center</span>
+              <span class="tool-item">PaperCut MF</span>
+              <span class="tool-item">Backup Solutions</span>
+              <span class="tool-item">Microsoft Endpoint Manager</span>
+            </div>
           </div>
 
-          <div>
-            <h3><i class="fas fa-code"></i> Desarrollo</h3>
+          <div class="achievement">
+            <div class="achievement-title"><i class="fas fa-trophy"></i>Experiencia en Andersen</div>
             <ul>
-              <li>Programación en C/C++</li>
-              <li>Shell Scripting</li>
-              <li>Desarrollo Web (HTML/CSS/JS)</li>
-              <li>Bases de datos SQL</li>
+              <li>Contribuí a <span class="highlight">migrar parte del sistema local a Azure</span>, utilizando tecnologías como Microsoft Endpoint Manager y Microsoft Graph</li>
+              <li>Gestión de identidades (IAM / Azure AD) y dispositivos (Intune MDM)</li>
+              <li>Controlador de Dominio, Active Directory y servicios asociados (DNS, DHCP, GPO)</li>
+              <li>Manejo de <span class="highlight">Windows Autopilot</span> para la configuración automatizada de equipos</li>
             </ul>
           </div>
         </div>
-      </section>
 
-      <section>
-        <h2>🎓 Formación</h2>
-        <div class="timeline">
+        <div class="content-section">
+          <h2><i class="fas fa-code"></i> Proyectos</h2>
           <div class="timeline-item">
-            <strong>Técnico en Sistemas Microinformáticos y Redes</strong><br>
-            CEU FP Madrid (2023-2025)<br>
-            <em>Módulos destacados:</em>
+            <div class="timeline-title">Implementación de Active Directory</div>
+            <div class="timeline-subtitle">Laboratorio FP CEU</div>
             <ul>
-              <li>Implantación de Sistemas Operativos</li>
-              <li>Gestión de Bases de Datos</li>
-              <li>Seguridad y Alta Disponibilidad</li>
-            </ul>
+              <li>Creación de usuarios/grupos y políticas de seguridad GPO</li>
+              <li>Configuración de replicación entre controladores de dominio</li>
+              <li>Autenticación LDAP/Kerberos para seguridad empresarial</li>
+            </ul> 
           </div>
-
+          
           <div class="timeline-item">
-            <strong>Matemáticas e Informática</strong><br>
-            Gredos San Diego (ESO) (09/2018 - 06/2022)
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>💻 Experiencia Técnica</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <strong>Programación Web | Piscine Discovery</strong><br>
-            Piscine Discovery Web 42 Web Fundación Telefónica (5 días)<br>
-            <em>Desarrollo de habilidades en programación web con tecnologías front-end y back-end</em>
-          </div>
-
-          <div class="timeline-item">
-            <strong>42-Madrid.Piscine-C-Shell</strong><br>
-            Fundación Telefónica (02/2023 - 03/2023)<br>
-            <em>Programación en C y Shell scripting para sistemas UNIX</em>
-          </div>
-
-          <div class="timeline-item">
-            <strong>Proyecto de Red Segura</strong><br>
-            CEU FP (2024)<br>
-            <em>Implementación:</em>
+            <div class="timeline-title">Migración a Windows Server 2022</div>
+            <div class="timeline-subtitle">Proyecto Académico</div>
             <ul>
-              <li>Configuración de VLANs</li>
-              <li>Firewall empresarial</li>
-              <li>Servidor DNS personalizado</li>
-              <li>Hardening de dispositivos</li>
+              <li>Virtualización con Hyper-V y configuración de DFS</li>
+              <li>Implementación de DHCP y DNS empresarial</li>
             </ul>
           </div>
         </div>
-      </section>
-
-      <section>
-        <h2>🚀 Proyectos Destacados</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <strong>Implementación de Active Directory</strong><br>
-            Laboratorio CEU FP (2025)<br>
-            <em>Configuración de dominio empresarial:</em>
-            <ul>
-              <li><i class="fas fa-users-cog"></i> Creación de usuarios y grupos</li>
-              <li><i class="fas fa-shield-alt"></i> Políticas de seguridad GPO</li>
-              <li><i class="fas fa-sync-alt"></i> Replicación entre controladores de dominio</li>
-              <li><i class="fas fa-lock"></i> Autenticación LDAP/Kerberos</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <strong>Migración a Windows Server 2022</strong><br>
-            Proyecto Académico (2024)<br>
-            <em>Actualización de infraestructura:</em>
-            <ul>
-              <li><i class="fas fa-server"></i> Virtualización con Hyper-V</li>
-              <li><i class="fas fa-database"></i> Configuración de DFS</li>
-              <li><i class="fas fa-network-wired"></i> DHCP y DNS empresarial</li>
-              <li><i class="fas fa-cloud-upload-alt"></i> Integración con Azure AD</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <strong>Portafolio Profesional</strong><br>
-            <a href="https://4lex-42.github.io/my-portfolio/" target="_blank">Ver proyecto</a><br>
-            <em>Tecnologías utilizadas:</em>
-            <ul>
-              <li>React.js</li>
-              <li>CSS3 Animaciones</li>
-              <li>GitHub Pages</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>🌟 Habilidades Clave</h2>
-        <div class="strengths">
-    <div>Resolución de Problemas</div>
-    <div>Gestión de Redes y Sistemas</div>
-    <div>Seguridad y Cumplimiento</div>
-    <div>Soporte y Mantenimiento</div>
-    <div>Automatización de Tareas</div>
-    <div>Comunicación Efectiva</div>
-    <div>Trabajo en Equipo</div>
-    <div>Adaptabilidad</div>
-  </div>
-      </section>
-
-      <section>
-        <h2>📜 Certificaciones</h2>
-        <div>
-          <span class="certification-badge">Cisco CCNA 1</span>
-          <span class="certification-badge">Microsoft Azure Fundamentals</span>
-          <span class="certification-badge">IT Essentials</span>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      &copy; 2025 Alejandro Andreu Cirilo | CV Actualizado
-    </footer>
-  </div>
-</body>
-</html>
