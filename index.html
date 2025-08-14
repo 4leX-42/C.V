@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CV de Alejandro Andreu - Especialista en Infraestructuras IT y CloudOps">
+  <meta name="author" content="Alejandro Andreu Cirilo">
   <title>CV - Alejandro Andreu Cirilo</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -12,12 +14,13 @@
       --secondary: #2c3e50;
       --light-bg: #f8f9fa;
       --accent: #e9ecef;
+      --text-secondary: #4a5568;
       --gradient: linear-gradient(45deg, #b50000 0%, #ff4040 100%);
       --shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
       background-color: var(--light-bg);
       color: var(--secondary);
       line-height: 1.6;
@@ -34,6 +37,7 @@
       box-shadow: var(--shadow);
       overflow: hidden;
       position: relative;
+      margin: 20px 0;
     }
     .container::before {
       content: '';
@@ -49,6 +53,7 @@
       background: white;
       text-align: center;
       border-bottom: 1px solid var(--accent);
+      position: relative;
     }
     h1 { color: var(--primary); font-size: 2.4rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
     .professional-title { color: var(--secondary); font-size: 1.2rem; font-weight: 600; margin-bottom: 20px; }
@@ -60,7 +65,8 @@
     .sidebar { background: var(--accent); border-radius:10px; padding:25px; height: fit-content; }
     .content-section { margin-bottom:35px; }
     .content-section:last-child { margin-bottom:0; }
-    h2 { color: var(--primary); font-size:1.4rem; margin-bottom:18px; padding-bottom:10px; border-bottom:2px solid var(--primary); display:flex; align-items:center; gap:10px; }
+    h2 { color: var(--primary); font-size:1.4rem; margin-bottom:18px; padding-bottom:10px; border-bottom:2px solid var(--primary); display:flex; align-items:center; gap:10px; transition: all 0.3s ease; }
+    h2:hover { color: var(--primary-light); }
     h2 i { font-size:1.2rem; }
     h3 { font-size:1.1rem; color: var(--secondary); margin-bottom:12px; }
     ul { padding-left:20px; }
@@ -72,7 +78,7 @@
     .timeline-item { margin-bottom:25px; position:relative; padding-left:25px; border-left:2px solid var(--primary); }
     .timeline-item:last-child { margin-bottom:0; }
     .timeline-item::before { content:''; position:absolute; left:-7px; top:8px; width:12px; height:12px; background: var(--primary); border-radius:50%; }
-    .timeline-date { font-size:0.9rem; color:#666; margin-bottom:5px; }
+    .timeline-date { font-size:0.9rem; color: var(--text-secondary); font-weight:500; margin-bottom:5px; }
     .timeline-title { font-weight:700; font-size:1.1rem; margin-bottom:8px; }
     .timeline-subtitle { font-size:0.95rem; color:#555; margin-bottom:10px; font-style:italic; }
     .achievement { background: rgba(181,0,0,0.05); border-left:3px solid var(--primary); padding:12px 15px; margin:15px 0; border-radius:0 8px 8px 0; }
@@ -82,8 +88,11 @@
     .tool-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
     .tool-item { background:white; border:1px solid #ddd; padding:4px 10px; border-radius:15px; font-size:0.8rem; }
     .highlight { font-weight:600; }
+    .download-btn { margin-top: 15px; text-align: center; }
+    #download-pdf { display: inline-flex; align-items: center; gap: 8px; background: var(--gradient); color: white; padding: 10px 25px; border-radius: 30px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+    #download-pdf:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(181,0,0,0.3); }
     @media (max-width:768px) { .main-content { grid-template-columns:1fr; padding:25px; } header { padding:25px 20px 15px; } .profile-summary { margin:0 25px 20px; } .contact-info { gap:10px 15px; } }
-    @media (max-width:480px) { .contact-info { flex-direction:column; align-items:center; gap:10px; } .contact-item { justify-content:center; } }
+    @media (max-width:480px) { .contact-info { flex-direction:column; align-items:center; gap:10px; } .contact-item { justify-content:center; } h1 { font-size: 2rem; } .profile-summary { margin:0 15px 20px; padding:15px; } }
   </style>
 </head>
 <body>
@@ -158,6 +167,14 @@
             <span class="cert-badge">Microsoft Azure Fundamentals</span>
           </div>
         </div>
+        
+        <div class="content-section">
+          <h2><i class="fas fa-language"></i> Idiomas</h2>
+          <ul>
+            <li>Español: <strong>Nativo</strong></li>
+            <li>Inglés: <strong>Técnico (B2)</strong></li>
+          </ul>
+        </div>
       </div>
 
       <div class="main-section">
@@ -195,23 +212,60 @@
         </div>
 
         <div class="content-section">
-          <h2><i class="fas fa-code"></i> Proyectos</h2>
-          <div class="timeline-item">
-            <div class="timeline-title">Implementación de Active Directory</div>
-            <div class="timeline-subtitle">Laboratorio FP CEU</div>
-            <ul>
-              <li>Creación de usuarios/grupos y políticas de seguridad GPO</li>
-              <li>Configuración de replicación entre controladores de dominio</li>
-              <li>Autenticación LDAP/Kerberos para seguridad empresarial</li>
-            </ul> 
-          </div>
-          
-          <div class="timeline-item">
-            <div class="timeline-title">Migración a Windows Server 2022</div>
-            <div class="timeline-subtitle">Proyecto Académico</div>
-            <ul>
-              <li>Virtualización con Hyper-V y configuración de DFS</li>
-              <li>Implementación de DHCP y DNS empresarial</li>
-            </ul>
-          </div>
-        </div>
+  <h2><i class="fas fa-code"></i> Proyectos</h2>
+
+  <div class="timeline-item">
+    <div class="timeline-title">Implementación de Active Directory</div>
+    <div class="timeline-subtitle">Proyecto Académico</div>
+    <ul>
+      <li>Creación de usuarios/grupos y políticas de seguridad GPO</li>
+      <li>Autenticación LDAP/Kerberos para seguridad empresarial</li>
+    </ul> 
+  </div>
+  
+  <div class="timeline-item">
+    <div class="timeline-title">Migración a Windows Server 2022</div>
+    <div class="timeline-subtitle">Proyecto Académico</div>
+    <ul>
+      <li>Virtualización con Hyper-V y configuración de DFS</li>
+      <li>Implementación de DHCP y DNS empresarial</li>
+    </ul>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-title">Piscine Discovery Web – 42 Madrid</div>
+    <div class="timeline-subtitle">Fundación Telefónica | Enero 2025 | 5 días</div>
+    <ul>
+      <li>Desarrollo web con tecnologías front-end y back-end</li>
+    </ul>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-title">Piscine C & Shell – 42 Madrid</div>
+    <div class="timeline-subtitle">Fundación Telefónica | Febrero - Marzo 2024</div>
+    <ul>
+      <li>Programación en C y scripting en Shell para sistemas UNIX</li>
+    </ul>
+  </div>
+
+</div>
+
+  <script>
+    // Función para simular descarga de PDF (solo para demostración)
+    document.getElementById('download-pdf').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('Función de descarga de PDF activada. En un entorno real, esto generaría un archivo PDF del CV.');
+    });
+    
+    // Efecto de scroll suave para todos los enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
